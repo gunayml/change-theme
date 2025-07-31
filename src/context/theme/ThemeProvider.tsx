@@ -11,7 +11,8 @@ const getInitialTheme = (): Theme => {
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>(getInitialTheme());
   useEffect(() => {
-    document.body.className = themes[theme];
+    document.body.className = `transition-colors duration-500 ${themes[theme]}`;
+
     localStorage.setItem("theme", theme);
   }, [theme]);
 
