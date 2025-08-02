@@ -6,7 +6,9 @@ const ToggleButton = () => {
   const { theme, toggleTheme } = useTheme();
 
   const handleToggle = () => {
-    toggleTheme();
+    if (toggleTheme) {
+      toggleTheme();
+    }
   };
 
   return (
